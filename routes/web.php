@@ -28,4 +28,4 @@ Route::get('/', function () {
     );
 })->name('clientes');
 
-Route::get('/inicio', [UserController::class, 'index'])->name('inicio');
+Route::get('inicio', [UserController::class, 'index'])->name('inicio');
