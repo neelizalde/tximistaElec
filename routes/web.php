@@ -15,10 +15,7 @@ use App\Models\Factura;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('nerea', function () {
-    $pasteles = Factura::where('cod_cliente', 10)->get();
-    dd($pasteles);
-});
+
 
 Route::get('/', function () {
     $clientes = DB::table('clientes')->get();
