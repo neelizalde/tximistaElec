@@ -2,7 +2,7 @@
  * Clientes
  * 
  * @author Nerea Elizalde <neelizalde@gmail.com>
- * @copyright 2020 RElectrodomésticos Tximista
+ * @copyright 2020 Electrodomésticos Tximista
  */
 $(() => {
 
@@ -20,7 +20,7 @@ $(() => {
 
     myTable.DataTable({
         language: {
-            url: `/tximistaElec/vendor/libraries/datatable/lang/es.json`
+            url: "js/datatable/lang/es.json"
         },
         dom: 'Bfprtipl',
         buttons: [

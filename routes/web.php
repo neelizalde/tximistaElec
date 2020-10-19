@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ShowProfile;
+use App\Http\Controllers\FacturaController;
+use App\Models\Factura;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,10 @@ use App\Http\Controllers\ShowProfile;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('nerea', function () {
+    $pasteles = Factura::where('cod_cliente', 10)->get();
+    dd($pasteles);
+});
 
 Route::get('/', function () {
     $clientes = DB::table('clientes')->get();
@@ -28,4 +31,5 @@ Route::get('/', function () {
     );
 })->name('clientes');
 
-Route::get('inicio', [UserController::class, 'index'])->name('inicio');
+
+Route::get('factura/{id}', 'FacturaController@ver');

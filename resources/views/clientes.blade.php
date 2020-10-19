@@ -72,6 +72,6 @@
 @stop
 
 @section('scripts')
-<script src="/tximistaElec/resources/js/clientes/clientes.js"></script>
+<script src="{{ asset('js/clientes/clientes.js') }}"></script>
 
 @stop
