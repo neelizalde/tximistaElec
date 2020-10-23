@@ -1,0 +1,11 @@
+.gn-menu{
+    display: block;
+    visibility: visible;
+}
+.gn-scroller{
+    display: block;
+    visibility: visible;
+}
+.gn-icon-menu {
+    float: left;
+}

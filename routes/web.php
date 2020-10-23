@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\FacturaController;
+use Illuminate\Support\Facades\URL;
+use \Illuminate\Console\AppNamespaceDetectorTrait;
 use App\Models\Factura;
 
 /*
@@ -16,17 +17,56 @@ use App\Models\Factura;
 |
 */
 
+Route::get('/', function () {
+    $facturas = DB::table('factura')->get();
+    echo URL::current();
+    dd(url());
+    return view(
+        'welcome',
+        [
+            'facturas' => $facturas
+        ]
+    );
+})->name('facturas');
 
+Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->name('clientes');
+
+Route::group(
+    [
+        'as' => 'admin.',
+        'prefix' => 'admin',
+        'namespace' =>'App\Http\Controllers',
+        'middleware' =>[
+            'auth',
+            'admin'
+        ]
+    ],
+    function () {
+        Route::get('/dashboard', 'ClientesController@index')->name('dashboard');
+    }
+);
+/*
+Route::group(
+    [
+        'as' => 'user.',
+        'prefix' => 'user',
+        'namespace' =>'App\Http\Controllers\User',
+        'middleware' => [
+            'auth',
+            'user'
+        ]
+    ],
+    function () {
+        Route::get('dashboard', 'UserDashboardController@index')->name('dashboard');
+    }
+);*/
+/*
 Route::get('/', function () {
     $clientes = DB::table('clientes')->get();
-    
     return view(
         'clientes',
         [
             'clientes' => $clientes
         ]
     );
-})->name('clientes');
-
-
-Route::get('factura/{id}', 'FacturaController@ver');
+})->name('clientes');*/

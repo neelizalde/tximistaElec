@@ -19,3 +19,10 @@
 <!-- Main  Nerea aquí esta todo el css del menu principal-->
 <link rel="stylesheet" href="{{ asset('css/common/css/main.css') }}" />
 
+<!-- menu -->
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="{{ asset('common/GoogleNexusWebsiteMenu/css/normalize.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('common/GoogleNexusWebsiteMenu/css/demo.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('common/GoogleNexusWebsiteMenu/css/component.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('common/GoogleNexusWebsiteMenu/css/main.css') }}" />
+

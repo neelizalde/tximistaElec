@@ -34,3 +34,6 @@
 <script src="{{ asset('js/datatable/dataTables.responsive.js') }}"></script>
 <!-- Page -->
 <script src="{{ asset('js/page.js') }}"></script>
+
+<!-- menu -->
+<script src="{{ asset('common/GoogleNexusWebsiteMenu/js/modernizr.custom.js') }}"></script>
